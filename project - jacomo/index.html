@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <title>jacomo</title>
+
+
+
+<style>
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header{
+        position: absolute;
+        top: 2.5%;
+
+        /*가로 가운데*/
+        left: 50%;
+        transform: translate(-50%);
+
+        /*최상위로 올리기*/
+        z-index: 999;
+    }
+
+    body {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      height: 700px; /*박스 전체길이*/
+    }
+</style>
+
+
+<style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .wrap{width: 1600px; margin: 0 auto;}
+
+
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    body{
+        font-family: 'Pretendard-Regular';
+    }
+
+
+/* 메인,헤더,네비 */
+    main{
+        z-index: 0;
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+        color: #fff;
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        align-items: center; /*이미지와 텍스트 전부 틀안에 맞게 중앙정렬*/
+        width: 1600px;
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+    }
+
+    .logo img{
+        width: 150px;
+    }
+
+    nav ul
+    {
+        display: flex;
+        list-style: none;
+        width: max-content;
+        margin: auto;
+    }
+
+    nav ul li{
+        padding: 0 30px;
+        ;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.3rem;
+    }
+
+    .info ul{
+        display: flex;
+        justify-content: end;
+        list-style: none;
+    }
+
+    .info ul li{
+        padding: 0 20px;
+    }
+
+    .info ul li a{
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+    }
+
+
+
+/*카테고리*/
+    .category{
+        padding: 50px;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .category h1{
+        padding-bottom: 100px;
+        text-align: center;
+    }
+
+    .cate1{
+        width: 96%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .cate_img img{
+        width: 100%;
+        border: 1px;
+        border-radius: 120px;
+    }
+
+    .cate_text {
+        width: 100%;
+        text-align: center;
+        color: black;
+        text-decoration: none;
+        margin-top: 30px;
+    }
+
+    .cate_text p{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+
+
+/*동영상*/
+    .movie{ /*백그라운드*/
+        width: 1920px;
+        height: 1200px;
+        background: rgb(227, 240, 233);
+        margin: auto;
+    }
+
+    .movbox{
+        width: 100%;
+        background:url(v1.mp4);
+        text-align: center;
+        padding-top: 11%;
+        padding-bottom: 11%;
+    }
+
+    .movbox video{
+        align-items: center;
+        width: 70%;
+    }
+
+
+/*이벤트(기획전)*/
+    .event{
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .event h1{
+        padding-top: 200px;
+    }
+
+    .even{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 130px;
+    }
+
+    .even img{
+        border: 1px;
+        border-radius: 20px;
+    }
+
+
+
+
+/*판매*/
+    .sale{
+        padding-top: 9%;
+        padding-bottom: 15%;
+    }
+
+/*판매헤더*/
+    .sale-n{
+        height: 210px;
+        padding-top: 100px;
+    }
+
+    .sale-n h1{
+        padding-bottom: 50px;
+        text-align: center;
+    }
+
+    .sale-n ul{
+        padding-top: 10px;
+        width: 900px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        list-style: none;
+    }
+
+    .sale-n ul li{
+        padding: 7px 30px;
+        border: 1px rgb(127, 200, 183);
+        border-radius: 20px;
+        background-color: rgb(127, 200, 183);
+    }
+
+    .sale-n ul li a{
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+                
+
+/* 판매중간박스 */
+    .sale1{
+        padding-top: 5%;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 1600px;
+    }
+
+
+/* 판매왼쪽박스 */
+    .sale-left{
+        width: 650px;
+    }
+
+    .sale-left img {
+        width: 100%;
+        height: 95%;
+        border: 1px;
+        border-radius: 20px;
+    }
+
+
+/* 판매 오른쪽박스 */
+    .sale-right{
+        width: 920px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .sale-right img{
+        width: 100%;
+        border: 1px;
+        border-radius: 20px;
+    }
+
+    .sbox{
+        width: 48%;
+        text-decoration: none;
+        color: black;
+        line-height: 25px;
+    }
+
+    .sbox_text{
+        background: white;
+        margin-top: 10px;
+    }
+
+    .sbox_text p{
+        margin-top: 30px;
+        color: grey;
+        font-weight: 500;
+    }
+
+
+
+
+
+/*리뷰*/
+    .review{
+        text-align: center;
+        background-position: center center;
+        padding-bottom: 10%;
+    }
+
+    .rehead{
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 3%;
+    }
+
+
+    .reback{ /*녹색 바*/
+        height: 400px;
+        background-color: rgb(227, 240, 233);
+        margin: auto;
+        z-index: -1; /*사진보다 배경을 뒤로 보내기*/
+        overflow: visible;
+        margin-top: 7%;
+    }
+
+
+    .re{
+        width: 1600px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: -515px;
+        z-index: 9;
+    }
+    .re_mini{
+        width: 32%;
+    }
+
+    .re_mini img{
+        width: 100%;
+        border: 1px;
+        border-radius: 20px;
+    }
+
+
+
+
+
+
+/*인스타그램*/
+    .insta{
+        padding-top: 2%;
+        padding-bottom: 200px;
+        text-align: center;
+        
+    }
+
+    .insta h1{
+        padding: 70px 0;
+    }
+
+    .insta p{
+        color: gray;
+    }
+
+    .insta span{
+        color: rgb(171, 162, 67);
+    }
+
+    .in {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 140px;
+        padding-top: 130px;
+    }
+
+    .in a{
+        width: 100%;
+    }
+
+
+
+
+/* 푸터 */
+    .fbox{
+        background: black;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .flogo{
+        padding-bottom: 60px;
+    }
+
+
+
+    .fnav{
+        margin-bottom: 20px;
+    }
+
+    .fnav ul{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .fnav ul li {
+        padding: 0 15px;
+    }
+
+    .fnav ul li a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .fbox p{
+        color: grey;
+        margin-bottom: 50px;
+        }
+
+
+
+
+    /* ### 디바이스 가로 768px 이하 스타일*/
+   
+    @media (max-width:768px) {
+   
+   
+    .wrap{
+        width: 98%;
+        margin: auto;
+        height:auto
+    }
+
+    main{
+        padding-top: 11rem; /*네비랑 메인배너 분리*/
+    }
+
+    header, .sale1 {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .info{ /*모바일로 줄일때만 로그인,회원가입칸 사라지게*/
+        display: none;
+    }
+
+
+    nav ul li{
+        padding: 0 8px;
+    }
+
+    nav ul li a{
+        font-size: 0.9rem;
+    }
+
+    .cate1{
+        gap: 0.1rem;
+    }
+
+    .cate1 p{
+        font-size: 1rem;
+    }
+
+
+
+    /*영화*/
+
+    .movie{ /*백그라운드*/
+        width: 96%;
+        height: auto;
+    }
+
+    .movbox{
+        padding-top: 40%;
+        padding-bottom: 40%;
+    }
+
+    .movbox video{
+        align-items: center;
+        width: 100%;
+    }
+
+
+
+    /*이벤트 기획전*/
+
+    .event h1{
+        padding-top: 25%;
+    }
+    .even{
+        width: 100%;
+        margin: auto
+    }
+
+    .even img {
+        width: 98%;
+        gap: 1rem;
+    }
+
+
+    /*판매*/
+
+    .sale{
+        padding-top: 15%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .sale-n ul{
+        padding-top: 3%;
+        width: 100%;
+    }
+
+    .sale-n ul li a{
+        font-size: 0.9rem;
+    }
+
+
+    .sale1{
+        padding-top: 20%;
+        width: 96%;
+        gap: 2rem; /*오른쪽 박스랑 왼쪽박스 사이에 세로간격*/
+    }
+
+
+    .sale-left,
+    .sale-right{
+        width: 100%;
+    }
+
+
+
+    /*리뷰*/
+    .review{
+        padding-top: 10%;
+    }
+
+    .reback {
+        width: 100%;
+        height: 160px;
+    }
+
+    .review h1{
+        padding-top: 10%;
+    }
+
+
+    .re {
+        width: 90%;
+        margin-top: -36%;
+    }
+
+
+
+    /*인스타*/
+    .insta{
+        padding-top: 40%;
+    }
+
+    .insta h1{
+        padding-top: 1%;
+    }
+
+    .insta p{
+        font-size: 90%;
+    }
+
+    .in{
+        gap: 0.5rem;
+    }
+
+    .in img{
+        width: 100%;
+    }
+    
+
+
+    .fbox{
+        font-size: 0.7rem;
+        
+    }
+
+    .flogo img{
+        width: 30%;
+    }
+
+    }
+</style>
+
+
+
+</head>
+<body>
+
+<!--메인 시작-->
+<main>
+    <div class="wrap"> <!--1600 네비 박스-->
+        <header>
+            <div class="logo"><!--로고-->
+            <img src="logo1.png" ></div>
+
+            <nav><!--네비-->
+                <ul>
+                    <li><a href="#">브랜드</a></li>
+                    <li><a href="#">전체상품</a></li>
+                    <li><a href="#">프로모션</a></li>
+                    <li><a href="#">고객후기</a></li>
+                    <li><a href="#">쇼룸안내</a></li>
+                    <li><a href="#">고객지원</a></li>
+                </ul>
+            </nav>
+
+            <div class="info">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+
+      <!-- Swiper -->
+        <div class="main_box"><!--메인 이미지-->
+            <div class="main"><!-- Swiper -->
+                <div class="swiper first">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="main1.png"></div> <!--메인에 들어갈 이미지1-->
+                        <div class="swiper-slide"><img src="main2.png"></div> <!--메인에 들어갈 이미지2-->   
+                    </div>
+                
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>  
+                </div>
+            </div>
+        </div>
+</main>
+<!--메인 끝-->
+
+
+
+
+<!--카테고리 1600-->
+<div class="wrap">
+    <div class="category">
+        <div class="cate_h"><h1>카테고리</h1></div>
+
+        <div class="cate1"><!--카테고리 중간박스-->
+            
+            <!--전체소파-->
+            <div class="cate_box">
+                <div class="cate_img">
+                    <img src="cate1.png">
+                </div>
+                
+                <div class="cate_text">
+                    <p>전체소파</p>
+                </div>
+            </div> 
+
+            <!--프로모션-->
+            <div class="cate_box">
+                <div class="cate_img">
+                    <img src="cate2.png">
+                </div>
+                
+                <div class="cate_text">
+                    <p>프로모션</p>
+                </div>
+            </div>
+
+            <!--자코모몰-->
+            <div class="cate_box">
+                <div class="cate_img">
+                    <img src="cate3.png">
+                </div>
+                
+                <div class="cate_text">
+                    <p>자코모몰</p>
+                </div>
+            </div>
+
+            <!--이벤트-->
+            <div class="cate_box">
+                <div class="cate_img">
+                    <img src="cate4.png">
+                </div>
+                
+                <div class="cate_text">
+                    <p>이벤트</p>
+                </div>
+            </div>
+
+            <!--쇼룸-->
+            <div class="cate_box">
+                <div class="cate_img">
+                    <img src="cate5.png">
+                </div>
+                
+                <div class="cate_text">
+                    <p>쇼룸</p>
+                </div>
+            </div>
+
+        </div><!--카테고리 중간박스 끝-->
+
+    </div> <!--카테고리 끝-->
+
+</div><!--1600사이즈 끝-->
+
+
+
+
+<!--영상 시작-->
+    <mov>
+        <div class="movie">
+            <div class="movbox">
+                <video src="v1.mp4" muted autoplay></video>
+        </div>
+    </div>
+    </mov>
+<!--영상 끝-->
+
+
+
+
+<!--이벤트,판매 1600-->
+<div class="wrap">
+
+     <!--이벤트 시작-->
+    <div class="event">
+        <h1>기획전</h1>
+        <div class="even">
+            <a href="#"><img src="event1.png"></a>
+            <a href="#"><img src="event2.png"></a>
+            <a href="#"><img src="event3.png"></a>
+        </div>
+    </div>
+    <!--이벤트 끝-->
+
+
+
+
+
+
+
+    <!--판매-->
+    <div class="sale">
+
+        <!--판매 네비-->
+        <div class="sale-n"> 
+            <h1>키워드 별 맞춤 소파</h1>
+            <ul>
+                <li><a href="#">베스트</a></li>
+                <li><a href="#">신상품</a></li>
+                <li><a href="#">현빈PICK</a></li>
+                <li><a href="#">드라마 소파</a></li>
+            </ul>
+        </div>
+
+
+
+        <!--판매 중간박스-->
+        <div class="sale1">
+            
+
+            <!--판매 왼쪽박스-->
+            <div class="sale-left"> 
+                <img src="salem.png"></div>
+            <!--판매 왼쪽 박스 끝-->
+
+            
+            <!--판매 오른쪽 박스-->
+            <div class="sale-right"> 
+
+                <div class="sbox"><!--1번박스-->
+                    <div class="box1_img">
+                        <img src="sale1.png">
+                    </div>
+                    
+                    <div class="sbox_text">
+                        <h3>피토 4인 기능성 포위브 패브릭 소파+쿠션2개</h3>
+                        <p>3,450,000원</p>
+                    </div>
+                </div>   
+
+                <div class="sbox"><!--2번박스-->
+                    <div class="box2_img">
+                        <img src="sale2.png">
+                    </div>
+                    
+                    <div class="sbox_text">
+                        <h3>포플랭 스윙 3인 기능성 젠위브 패브릭 소파</h3>
+                        <p>1,810,000원</p>
+                    </div>
+                </div>
+
+                <div class="sbox"><!--3번박스-->
+                    <div class="box3_img">
+                        <img src="sale3.png">
+                    </div>
+                    
+                    <div class="sbox_text">
+                        <h3>루트 4인 기능성 레체 이태리 천연면피 소가죽 소파</h3>
+                        <p>3,500,000원</p>
+                    </div>
+                </div> 
+
+
+                <div class="sbox"><!--4번박스-->
+                    <div class="box4_img">
+                        <img src="sale4.png">
+                    </div>
+                    
+                    <div class="sbox_text">
+                        <h3>아렌드 모듈 4인 세레나 패브릭 소파(A+A)</h3>
+                        <p>2,250,000원</p>
+                    </div>
+                </div>  
+
+            </div><!--판매 오른쪽박스 끝-->
+        </div><!--판매 중간박스 끝-->
+    </div>
+    <!--판매 끝-->
+
+</div>
+<!--이벤트1600끝-->
+
+
+
+
+<!--리뷰 시작--> 
+
+    
+    <div class="review">
+
+        <h1 class="rehead">베스트 포토 후기</h1>  
+
+        <div class="reback"></div> <!--녹색 바-->
+
+        <div class="re">
+
+            <div class="re_mini">
+            <a href="#"><img src="re1.png"></a>
+            </div>
+
+            <div class="re_mini">
+            <a href="#"><img src="re2.png"></a>
+            </div>
+
+            <div class="re_mini">
+            <a href="#"><img src="re3.png"></a>
+            </div>
+
+        </div>
+
+    </div>
+<!--리뷰 끝-->
+
+
+
+
+
+<!--인스타 시작 1920-->
+<insta>
+
+    <div class="insta">
+        <h1>J<span>A</span>COMO <br> INSTAGRAM</h1>
+
+        <P>자코모 인스타그램 팔로우 하고 다양한 이벤트 및 정보를 빠르게 확인 해 보세요!</P>
+        <div class="in">
+
+             <!-- Swiper -->
+            <div class="swiper second">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C8Ljmd0Px09/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta1.png"></a>
+                </div>
+                
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C8s8PjVPLjs/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta2.png"></a>
+                </div>
+                
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C8dj5JNvEO7/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta3.png"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C75cv6iPptL/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta4.png"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C-4Aa3PP1vp/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta5.png"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C-T84-Fv1dj/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta6.png"></a>
+                </div>
+                
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/DAz_5HWTeyA/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta7.png"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C_rgDHrvDD8/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta8.png"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.instagram.com/p/C-WiZD6vGRy/
+                    ?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="insta9.png"></a>
+                </div>
+            </div>
+  </div>
+
+
+        </div>
+        <P>@jakomo.official</P>
+    </div>
+
+</insta>
+<!--인스타 끝-->
+
+
+
+<!--푸터-->
+<footer>
+
+    <div class="fbox"><!--푸터 중간박스-->
+
+        <div class="flogo"> <!--푸터 로고-->
+            <img src="logo2.png">
+        </div>
+
+        <div class="fnav"> <!--이용약관-->
+            <ul>
+                <li><a href="http://www.jkgroup.co.kr/">회사소개</a></li>
+                <li><a href="https://www.jakomo.co.kr/goods/goods_list.php?cateCd=007&sort=g.regDt+desc&pageNum=18&sort=g.regDt+desc">개인결제</a></li>
+                <li><a href="https://www.jakomo.co.kr/board/write.php?bdId=cooperation">광고 및 제휴 문의</a></li>
+                <li><a href="https://www.jakomo.co.kr/service/agreement.php">이용약관</a></li>
+                <li><a href="https://www.jakomo.co.kr/service/guide.php">이용안내</a></li>
+                <li><a href="https://www.jakomo.co.kr/service/private.php">개인정보처리방침</a></li>
+                <li><a href="https://www.jakomo.co.kr/service/reservation.html">B2B구매</a></li>
+            </ul>
+        </div><!--이용약관끝-->
+
+        <P>(주)자코모│대표 : 박유신, 박경분│경기도 남양주시 오남읍 진건오남로929번길 8<br>
+            사업자등록번호 :132-81-62165 사업자정보확인│통신판매업신고번호 : 2020-진접오남-0219<br>
+            개인정보보호책임자 :박유신│팩스번호 : 031-527-8618│이메일 : jakomo@jakomo.co.kr</P>
+    </div><!--푸터 중간박스 끝-->
+
+</footer>
+
+
+
+
+
+
+<!--메인 스와이프 스크립트-->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".first", {
+        loop: true, /*슬라이드 계속 반복설정*/
+
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+    
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+          },
+      }
+    );
+  </script>
+
+
+
+
+
+<!--인스타 스와이프 스크립트-->
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+   var swiper = new Swiper(".second", {
+     slidesPerView: 6,
+     spaceBetween: 10,
+     loop: true, /*슬라이드 계속 반복설정*/
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+
+     autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+          },
+   });
+ </script>
+</body>
+</html>
+
+
