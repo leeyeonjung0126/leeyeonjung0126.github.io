@@ -1,0 +1,321 @@
+<meta charset="utf-8" />
+
+<style>
+*{margin: 0; padding: 0; box-sizing: border-box;}
+.wrap{width: 1600px; margin: 0 auto;}
+
+/* 메인,헤더,네비 */
+.main_box{
+    height: 1000px;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center; /*이미지와 텍스트 전부 틀안에 맞게 중앙정렬*/
+}
+
+nav ul
+{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li
+{
+    padding: 0 30px;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.info ul
+{
+    display: flex;
+    justify-content: end;
+    list-style: none;
+}
+
+.info ul li
+{
+    padding: 0 20px;
+}
+
+.info ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+
+
+/*카테고리*/
+.category{
+    height: 1000px;
+    padding-top: 230px;
+    padding: 0 50px;
+}
+
+.category h1{
+    padding-top: 250px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.cate1{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.cate_img img{
+    border: 1px;
+    border-radius: 120px;
+}
+
+.cate_text {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.cate_text p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+/*동영상*/
+.movbox{
+    background:url(movback.png);
+    height: 1200px;
+    text-align: center;
+    padding-top: 230px;
+}
+
+
+
+/*이벤트(기획전)*/
+.event{
+    text-align: center;
+    height: 1170px;
+}
+
+.event h1{
+    padding-top: 200px;
+}
+
+.even{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 130px;
+}
+
+.even img{
+    border: 1px;
+    border-radius: 20px;
+}
+
+
+
+
+/*판매*/
+.sale{
+    height: 1200px;
+    padding-top: 80px;
+}
+
+/*판매헤더*/
+.sale-n{
+    height: 210px;
+    padding-top: 50px
+}
+
+.sale-n h1{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.sale-n ul{
+    padding-top: 10px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    list-style: none;
+}
+
+.sale-n ul li{
+    padding: 7px 30px;
+    border: 1px rgb(127, 200, 183);
+    border-radius: 20px;
+    background-color: rgb(127, 200, 183);
+}
+
+.sale-n ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+            
+
+/* 판매중간박스 */
+.sale1{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 1600px;
+}
+
+/* 판매왼쪽박스 */
+.sale-left{
+    width: 650px;
+}
+
+.sale-left img {
+    width: 100%;
+    height: 95%;
+    border: 1px;
+    border-radius: 20px;
+}
+
+
+/* 판매 오른쪽박스 */
+.sale-right{
+    width: 920px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sale-right img{
+    width: 100%;
+    border: 1px;
+    border-radius: 20px;
+}
+
+.sbox{
+    width: 48%;
+    text-decoration: none;
+    color: black;
+    line-height: 25px;
+}
+
+.sbox_text{
+    background: white;
+    margin-top: 10px;
+}
+
+.sbox_text p{
+    margin-top: 30px;
+    color: grey;
+    font-weight: 500;
+}
+
+
+
+
+
+/*리뷰*/
+.review{
+    text-align: center;
+    height: 1000px;
+    background: url(bar1.png);
+    background-position: center center;
+}
+
+.review h1{
+    padding-top: 70px;
+    padding-bottom: 100px
+}
+
+.re{
+    width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.re_mini{
+    width: 443px;  height: 580px;
+}
+
+.re_mini img{
+    border: 1px;
+    border-radius: 20px;
+}
+
+/*인스타그램*/
+.insta{
+    height: 1050px;
+    text-align: center;
+}
+
+.insta h1{
+    padding: 70px 0;
+}
+
+.insta p{
+    color: gray;
+}
+
+.insta span{
+    color: rgb(171, 162, 67);
+}
+
+.in {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 140px;
+    margin-top: 130px;
+}
+
+
+
+
+/* 푸터 */
+.fbox{
+    background: black;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.flogo{
+    padding-bottom: 60px;
+}
+
+.fnav{
+    margin-bottom: 20px;
+}
+
+.fnav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.fnav ul li {
+    padding: 0 15px;
+}
+
+.fnav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.fbox p{
+    color: grey;
+    margin-bottom: 50px;
+    }
+
+</style>
