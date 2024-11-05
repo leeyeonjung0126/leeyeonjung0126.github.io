@@ -83,10 +83,21 @@
 /* ------------------------------------------------------------------- 
  * ## fonts
  * ------------------------------------------------------------------- */
+
+
+ @font-face { /*지마켓산스 폰트*/
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
-    --font-1: "Inter", sans-serif;
+    --font-1: 'GmarketSansMedium'; /*지마켓산스 폰트 적용*/
     --font-2: "IBM Plex Serif", serif;
     /* monospace
      */
@@ -4193,7 +4204,7 @@ button.btn--pill {
  *
  * ------------------------------------------------------------------- */
 .s-portfolio {
-    background-color: var(--color-gray-1);
+    background-color: white;
     padding-top: calc(6 * var(--space));
     padding-bottom: var(--vspace-5);
 }
@@ -4223,7 +4234,7 @@ button.btn--pill {
 
 .folio-item__thumb::before {
     z-index: 1;
-    content: "";
+    content: ""; /*원래 있던 ...을 없앰*/
     display: block;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
@@ -4241,7 +4252,7 @@ button.btn--pill {
 
 .folio-item__thumb::after {
     z-index: 1;
-    content: "...";
+    content : "";/*원래 있던 ...을 없앰*/
     font-family: var(--font-2);
     font-weight: 300;
     font-size: 3rem;
@@ -4264,11 +4275,11 @@ button.btn--pill {
     top: 50%;
 }
 
-.folio-item img {
+.folio-item img {  
     display: block;
-    margin: 0;
+    margin: 0;  
     -webkit-transition: all, .5s;
-    transition: all, .5s;
+    transition: all, .5s; /*호버 부드러운 속도로 올리는것*/
 }
 
 /* on hover
